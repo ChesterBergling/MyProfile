@@ -1,4 +1,76 @@
 html {
-  height: 100%;
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 12pt;
+  background: linear-gradient(120deg, #f0f4f8 0%, #e7eaf6 100%);
+  color: #22223b;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Navbar styles */
+nav.navbar {
   width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(34, 34, 59, 0.06);
+  padding: 1.2rem 0;
+  margin-bottom: 2.5rem;
+}
+
+nav.navbar ul {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+nav.navbar li {
+  position: relative;
+}
+
+nav.navbar a {
+  text-decoration: none;
+  color: #22223b;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.3rem 0.7rem;
+  transition: color 0.2s, background 0.2s;
+  border-radius: 5px;
+}
+
+nav.navbar a:hover {
+  background: #e7eaf6;
+  color: #3a86ff;
+}
+
+h1, h2, h3 {
+  color: #3a86ff;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Optional: add spacing to main content */
+body > *:not(nav) {
+  margin-top: 1.5rem;
+  width: 95%;
+  max-width: 700px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  nav.navbar ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  body > *:not(nav) {
+    padding: 0 1rem;
+  }
+}
 }
