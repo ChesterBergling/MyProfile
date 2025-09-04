@@ -1,2 +1,2 @@
-# WD LiveLab 2: Demo Starter Code
+MyProfile
 To get started, create a new Codespace from this repo.
