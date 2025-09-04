@@ -1,3 +1,8 @@
+Understood. I've updated the code to remove the hyperlink from the photo.
+
+Here is the revised code:
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +13,7 @@
     <style>
         /* Card styling */
         .profile-card {
-            background: #f0f0f0; /* Changed from #fff to a gray to show the change */
+            background: #f0f0f0;
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             padding: 2rem;
@@ -26,7 +31,7 @@
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: none; /* Removed the shadow for the "white boundary" effect */
+            box-shadow: none;
             margin-bottom: 16px;
         }
         .profile-card h2 {
@@ -66,9 +71,7 @@
     </nav>
 
     <div class="profile-card">
-        <a href="https://www.linkedin.com/in/michael-ebersole-871031359/" target="_blank">
-            <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/Screenshot%202025-09-04%20135719.png" alt="Michael Ebersole Profile Photo">
-        </a>
+        <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/Screenshot%202025-09-04%20135719.png" alt="Michael Ebersole Profile Photo">
         <h2>Michael Ebersole</h2>
         <p>I am a junior web developer actively seeking freelance opportunities. Let’s connect if you need quality web development for your next project!</p>
         <a href="mailto:ebersolemichael@gmail.com">Email</a>
@@ -82,4 +85,4 @@
     <script src="script.js"></script>
 </body>
 </html>
-
+```
