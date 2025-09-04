@@ -4,7 +4,27 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
+.profile-photo-container {
+  width: 180px;         /* Double the size for enlargement */
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;     /* Crops anything outside the circle */
+  border-radius: 50%;   /* Makes it a perfect circle */
+  background: #e7eaf6;  /* Matches site background, hides white edges */
+  box-shadow: 0 2px 8px rgba(34,34,59,0.08);
+  margin: 2rem auto;
+}
 
+.profile-photo {
+  width: 200px;         /* Slightly larger for zoom-in effect */
+  height: 200px;
+  object-fit: cover;    /* Ensures the image covers the area and cuts white */
+  object-position: center top; /* Adjust as needed to center subject */
+  border-radius: 50%;   /* Ensures image itself is circular */
+  background: #e7eaf6;
+}
 body {
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
