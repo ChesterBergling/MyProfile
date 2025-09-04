@@ -1,27 +1,69 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>LiveLab 2 Demo</title>
-    <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Ebersole Profile</title>
     <style>
+        /* General body styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar li {
+            margin: 0 1rem;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #3a86ff;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .navbar a:hover {
+            color: #22223b;
+        }
+
         /* Card styling */
         .profile-card {
-            background: #f0f0f0;
+            background: #ffffff;
             border-radius: 15px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             padding: 2rem;
             max-width: 400px;
-            margin: auto;
+            margin: 4rem auto;
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+
         .profile-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
+
         .profile-card img {
             width: 160px;
             height: 160px;
@@ -30,15 +72,18 @@
             box-shadow: none;
             margin-bottom: 16px;
         }
+
         .profile-card h2 {
             margin-bottom: 0.5rem;
             color: #22223b;
         }
+
         .profile-card p {
             font-size: 0.95rem;
             margin-bottom: 1.2rem;
             color: #555;
         }
+
         .profile-card a {
             display: inline-block;
             margin: 0.3rem 0.6rem;
@@ -47,17 +92,20 @@
             font-weight: bold;
             transition: color 0.2s;
         }
+
         .profile-card a:hover {
             color: #22223b;
         }
+
         .centered-photo {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation bar with social links -->
     <nav class="navbar">
         <ul>
             <li><a href="https://www.linkedin.com/in/michael-ebersole-871031359/">LinkedIn</a></li>
@@ -66,16 +114,16 @@
         </ul>
     </nav>
 
+    <!-- Profile card with contact information -->
     <div class="profile-card">
-        <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/175701862896317793.png" alt="Michael Ebersole Profile Photo">
+        <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/image.jpg" alt="Michael Ebersole Profile Photo">
         <h2>Michael Ebersole</h2>
-        <p>I am a junior web developer actively seeking freelance opportunities. Let’s connect if you need quality web development for your next project!</p>
-        <a href="mailto:ebersolemichael@gmail.com">Email</a>
-        <a href="tel:2023862653">Call</a>
+        <p>I am a junior web developer actively seeking freelance opportunities. Let’s connect if you need quality web development for your next project!
+<br><br>
+<a href="mailto:ebersolemichael1@gmail.com">ebersolemichael1@gmail.com</a> <a href="tel:202-386-2653">202-386-2653</a></p>
     </div>
 
-  
-    <script src="script.js"></script>
+    <!-- Empty script tag as per original request -->
+    <script></script>
 </body>
 </html>
-
