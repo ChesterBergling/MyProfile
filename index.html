@@ -13,9 +13,10 @@
             --heading: #22223B;
             --text: #444;
             --shadow: #A5B4FC;
-            --skill-bg: #F2F2E9; /* same as card background */
+            --skill-bg: #F2F2E9;
             --skill-text: #2563EB;
-            --skill-border: #A5B4FC; /* soft blue shadow */
+            --skill-border: #A5B4FC;
+            --section-spacing: 2rem;
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -88,8 +89,8 @@
             margin-left: auto;
             margin-right: auto;
         }
-        .skills {
-            margin: 2rem auto 0 auto;
+        .section-box {
+            margin: var(--section-spacing) auto 0 auto;
             max-width: 400px;
             background: var(--card-bg);
             border-radius: 12px;
@@ -99,13 +100,14 @@
             flex-direction: column;
             align-items: center;
         }
-        .skills-title {
+        .section-title {
             font-size: 1.15rem;
             color: var(--heading);
             margin-bottom: 0.7rem;
             font-weight: 600;
             letter-spacing: 1px;
         }
+        /* Skills section */
         .skills-list {
             display: flex;
             flex-wrap: nowrap;
@@ -126,15 +128,41 @@
             box-shadow: 0 2px 8px rgba(165,180,252,0.05);
             text-align: center;
             white-space: nowrap;
-            /* No hover styles */
         }
-        /* Hide scroll bar on Chrome, Safari, Opera */
         .skills-list::-webkit-scrollbar {
             display: none;
         }
-        /* Hide scroll bar on Firefox */
         .skills-list {
             scrollbar-width: none;
+        }
+        /* Projects section */
+        .projects-list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: stretch;
+        }
+        .project-item {
+            background: var(--skill-bg);
+            border: 1px solid var(--skill-border);
+            border-radius: 12px;
+            padding: 0.7rem 1rem;
+            color: var(--text);
+            box-shadow: 0 1px 4px rgba(165,180,252,0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .project-name {
+            font-weight: 600;
+            color: var(--primary-accent);
+            margin-bottom: 0.3rem;
+            font-size: 1.02rem;
+        }
+        .project-desc {
+            font-size: 0.98rem;
+            color: var(--text);
         }
         @media (max-width: 500px) {
             .navbar {
@@ -162,12 +190,12 @@
             .profile-card p {
                 font-size: 0.98rem;
             }
-            .skills {
+            .section-box {
                 margin: 1.25rem auto 0 auto;
                 max-width: 98vw;
                 padding: 0.8rem 0.3rem;
             }
-            .skills-title {
+            .section-title {
                 font-size: 1.03rem;
                 margin-bottom: 0.7rem;
             }
@@ -177,6 +205,12 @@
             .skill-item {
                 padding: 0.4rem 0.7rem;
                 font-size: 0.95rem;
+            }
+            .projects-list {
+                gap: 0.7rem;
+            }
+            .project-item {
+                padding: 0.55rem 0.6rem;
             }
         }
     </style>
@@ -199,13 +233,30 @@
             <span>202-386-2653</span>
         </p>
     </div>
-    <div class="skills">
-        <div class="skills-title">Skills</div>
+    <div class="skills section-box">
+        <div class="skills-title section-title">Skills</div>
         <div class="skills-list">
             <div class="skill-item">HTML</div>
             <div class="skill-item">CSS</div>
             <div class="skill-item">WordPress</div>
             <div class="skill-item">GitHub</div>
+        </div>
+    </div>
+    <div class="projects section-box">
+        <div class="projects-title section-title">Projects</div>
+        <div class="projects-list">
+            <div class="project-item">
+                <div class="project-name">Personal Portfolio Website</div>
+                <div class="project-desc">A responsive personal website showcasing my skills and freelance services. Built with HTML, CSS, and JavaScript.</div>
+            </div>
+            <div class="project-item">
+                <div class="project-name">WordPress Blog Setup</div>
+                <div class="project-desc">Customized a WordPress blog for a client, including theme configuration, plugins, and SEO optimization.</div>
+            </div>
+            <div class="project-item">
+                <div class="project-name">GitHub Projects Demo</div>
+                <div class="project-desc">Created demo repositories on GitHub to demonstrate proficiency in version control and collaborative development workflows.</div>
+            </div>
         </div>
     </div>
     <script></script>
