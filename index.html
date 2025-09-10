@@ -5,25 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Ebersole Profile</title>
     <style>
-        /* General body styling */
+        :root {
+            --background: #F8FAFC;
+            --card-bg: #F2F2E9;         /* Slightly stronger off-white */
+            --primary-accent: #2563EB;  /* Tech blue */
+            --secondary-accent: #06B6D4;/* Bright cyan */
+            --heading: #22223B;         /* Charcoal blue */
+            --text: #444;               /* Dark gray */
+            --shadow: #A5B4FC;          /* Soft blue shadow */
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: var(--background);
+            color: var(--text);
             margin: 0;
             padding: 0;
         }
-
-        /* Navbar styling */
         .navbar {
-            background-color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 6px var(--shadow);
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 10;
         }
-
         .navbar ul {
             list-style: none;
             margin: 0;
@@ -31,39 +36,32 @@
             display: flex;
             justify-content: center;
         }
-
         .navbar li {
             margin: 0 1rem;
         }
-
         .navbar a {
             text-decoration: none;
-            color: #3a86ff;
+            color: var(--primary-accent);
             font-weight: bold;
             transition: color 0.2s;
         }
-
         .navbar a:hover {
-            color: #22223b;
+            color: var(--secondary-accent);
         }
-
-        /* Card styling */
         .profile-card {
-            background: #ffffff;
+            background: var(--card-bg);
             border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px var(--shadow);
             padding: 2rem;
             max-width: 400px;
-            margin: 4rem auto;
+            margin: 1rem auto 0 auto; /* Reduced space above card */
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
         .profile-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 18px var(--shadow);
         }
-
         .profile-card img {
             width: 160px;
             height: 160px;
@@ -72,40 +70,66 @@
             box-shadow: none;
             margin-bottom: 16px;
         }
-
         .profile-card h2 {
             margin-bottom: 0.5rem;
-            color: #22223b;
+            color: var(--heading);
+            font-size: 1.5rem;
         }
-
         .profile-card p {
             font-size: 0.95rem;
             margin-bottom: 1.2rem;
-            color: #555;
+            color: var(--text);
         }
-
         .profile-card a {
             display: inline-block;
             margin: 0.3rem 0.6rem;
             text-decoration: none;
-            color: #3a86ff;
+            color: var(--primary-accent);
             font-weight: bold;
             transition: color 0.2s;
         }
-
         .profile-card a:hover {
-            color: #22223b;
+            color: var(--secondary-accent);
         }
-
         .centered-photo {
             display: block;
             margin-left: auto;
             margin-right: auto;
         }
+        @media (max-width: 500px) {
+            .navbar {
+                padding: 0.75rem 0.7rem;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar li {
+                margin: 0.7rem 0;
+            }
+            .profile-card {
+                padding: 1.1rem;
+                margin: 1rem 0.6rem 0 0.6rem;
+                max-width: 98vw;
+            }
+            .profile-card img {
+                width: 130px;
+                height: 130px;
+            }
+            .profile-card h2 {
+                font-size: 1.35rem;
+            }
+            .profile-card p {
+                font-size: 0.98rem;
+            }
+            .profile-card a {
+                margin: 0.25rem 0.12rem;
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation bar with social links -->
     <nav class="navbar">
         <ul>
             <li><a href="https://www.linkedin.com/in/michael-ebersole-871031359/">LinkedIn</a></li>
@@ -113,17 +137,13 @@
             <li><a href="https://app.joinhandshake.com/profiles/ytgt2r">Handshake</a></li>
         </ul>
     </nav>
-
-    <!-- Profile card with contact information -->
     <div class="profile-card">
         <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/image.jpg" alt="Michael Ebersole Profile Photo">
         <h2>Michael Ebersole</h2>
         <p>I am a junior web developer actively seeking freelance opportunities. Let’s connect if you need quality web development for your next project!
-<br><br>
-<a href="mailto:ebersolemichael1@gmail.com">ebersolemichael1@gmail.com</a> <a href="tel:202-386-2653">202-386-2653</a></p>
+        <br><br>
+        <a href="mailto:ebersolemichael1@gmail.com">ebersolemichael1@gmail.com</a> <a href="tel:202-386-2653">202-386-2653</a></p>
     </div>
-
-    <!-- Empty script tag as per original request -->
     <script></script>
 </body>
 </html>
