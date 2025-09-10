@@ -1,20 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Profile</title>
+    <title>Michael Ebersole Profile</title>
     <style>
-        body {
-            background-color: #1677ff; /* Changed background color */
+        :root {
+            /* Slightly stronger light blue background and offwhite card */
+            --background: #d9e7f3; /* Stronger light blue */
+            --card-bg: #e5e2cf;    /* Stronger offwhite */
+            --primary-accent: #2563EB;
+            --secondary-accent: #06B6D4;
+            --heading: #22223B;
+            --text: #444;
+            --shadow: #A5B4FC;
+            --skill-bg: #e5e2cf;
+            --skill-text: #2563EB;
+            --skill-border: #A5B4FC;
+            --section-spacing: 2rem;
         }
-        /* Other styles remain unchanged */
+        html, body {
+            height: 100%;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 6px var(--shadow);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .navbar li {
+            margin: 0 1rem;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: var(--primary-accent);
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .navbar a:hover {
+            color: var(--secondary-accent);
+        }
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 4px 12px var(--shadow);
+            padding: 2rem;
+            max-width: 400px;
+            margin: 1.25rem auto 0 auto;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .profile-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 18px var(--shadow);
+        }
+        .profile-card img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: none;
+            margin-bottom: 16px;
+        }
+        .profile-card h2 {
+            margin-bottom: 0.5rem;
+            color: var(--heading);
+            font-size: 1.5rem;
+        }
+        .profile-card p {
+            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            color: var(--text);
+        }
+        .centered-photo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-box {
+            margin: var(--section-spacing) auto 0 auto;
+            max-width: 400px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px var(--shadow);
+            padding: 1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+        .section-title {
+            font-size: 1.15rem;
+            color: var(--heading);
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+            justify-content: center;
+            width: 100%;
+            overflow-x: auto;
+        }
+        .skill-item {
+            background: var(--skill-bg);
+            color: var(--skill-text);
+            border: 1.5px solid var(--skill-border);
+            border-radius: 20px;
+            padding: 0.45rem 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(165,180,252,0.05);
+            text-align: center;
+            white-space: nowrap;
+        }
+        .skills-list::-webkit-scrollbar {
+            display: none;
+        }
+        .skills-list {
+            scrollbar-width: none;
+        }
+        .projects-list {
+            width: 100%;
+            display: flex;
+            gap: 0.7rem;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+        }
+        .project-item {
+            background: var(--skill-bg);
+            border: 1px solid var(--skill-border);
+            border-radius: 12px;
+            padding: 0.7rem 0.6rem;
+            color: var(--text);
+            box-shadow: 0 1px 4px rgba(165,180,252,0.07);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            min-width: 0;
+            max-width: 120px;
+            flex: 1 1 0;
+            word-break: break-word;
+            overflow: hidden;
+        }
+        .project-name {
+            font-weight: 600;
+            color: var(--primary-accent);
+            margin-bottom: 0.3rem;
+            font-size: 1.02rem;
+        }
+        .project-desc {
+            font-size: 0.93rem;
+            color: var(--text);
+        }
+        @media (max-width: 500px) {
+            .navbar {
+                padding: 0.75rem 0.7rem;
+            }
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            .navbar li {
+                margin: 0.7rem 0;
+            }
+            .profile-card {
+                padding: 1.1rem;
+                margin: 1.5rem 0.6rem 0 0.6rem;
+                max-width: 98vw;
+            }
+            .profile-card img {
+                width: 130px;
+                height: 130px;
+            }
+            .profile-card h2 {
+                font-size: 1.35rem;
+            }
+            .profile-card p {
+                font-size: 0.98rem;
+            }
+            .section-box {
+                margin: 1.25rem auto 0 auto;
+                max-width: 98vw;
+                padding: 0.8rem 0.3rem;
+            }
+            .section-title {
+                font-size: 1.03rem;
+                margin-bottom: 0.7rem;
+            }
+            .skills-list {
+                gap: 0.4rem;
+            }
+            .skill-item {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.95rem;
+            }
+            .projects-list {
+                gap: 0.5rem;
+            }
+            .project-item {
+                padding: 0.45rem 0.35rem;
+                max-width: 100px;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="box">
-        <h1>Welcome to My Profile</h1>
-        <p>This is a sample paragraph.</p>
+    <nav class="navbar">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/michael-ebersole-871031359/">LinkedIn</a></li>
+            <li><a href="https://www.upwork.com/freelancers/~01a08a65254b745176">Upwork</a></li>
+            <li><a href="https://app.joinhandshake.com/profiles/ytgt2r">Handshake</a></li>
+        </ul>
+    </nav>
+    <div class="profile-card">
+        <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/image.jpg" alt="Michael Ebersole Profile Photo">
+        <h2>Michael Ebersole</h2>
+        <p>
+            I am a junior web developer actively seeking freelance opportunities. Let’s connect if you need quality web development for your next project!
+            <br><br>
+            <span>ebersolemichael1@gmail.com</span>
+            <span>202-386-2653</span>
+        </p>
     </div>
+    <div class="skills section-box">
+        <div class="skills-title section-title">Skills</div>
+        <div class="skills-list">
+            <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">WordPress</div>
+            <div class="skill-item">GitHub</div>
+        </div>
+    </div>
+    <div class="projects section-box">
+        <div class="projects-title section-title">Projects</div>
+        <div class="projects-list">
+            <div class="project-item">
+                <div class="project-name">Portfolio Website</div>
+                <div class="project-desc">A responsive site to showcase my skills and services, built with HTML and CSS.</div>
+            </div>
+            <div class="project-item">
+                <div class="project-name">WordPress Blog</div>
+                <div class="project-desc">Custom WordPress setup, theme configuration, and SEO optimization for a client blog.</div>
+            </div>
+            <div class="project-item">
+                <div class="project-name">GitHub Demo</div>
+                <div class="project-desc">Demo repositories to demonstrate version control and collaboration workflows.</div>
+            </div>
+        </div>
+    </div>
+    <script></script>
 </body>
 </html>
