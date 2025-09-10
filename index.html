@@ -1,155 +1,85 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Ebersole Profile</title>
+    <meta name="viewport" content="width=device-width">
+    <title>LiveLab 2 Demo</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
     <style>
-        :root {
-            /* Complementary background: soft blue-teal */
-            --background: #e2eff7; /* Soft, calming, matches accents */
-            --card-bg: #F2F2E9;
-            --primary-accent: #2563EB;
-            --secondary-accent: #06B6D4;
-            --heading: #22223B;
-            --text: #444;
-            --shadow: #A5B4FC;
-            --skill-bg: #F2F2E9;
-            --skill-text: #2563EB;
-            --skill-border: #A5B4FC;
-            --section-spacing: 2rem;
-        }
-        html, body {
-            height: 100%;
-            box-sizing: border-box;
-        }
-        body {
-            min-height: 100vh;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background);
-            color: var(--text);
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: var(--card-bg);
-            box-shadow: 0 2px 6px var(--shadow);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-        .navbar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        .navbar li {
-            margin: 0 1rem;
-        }
-        .navbar a {
-            text-decoration: none;
-            color: var(--primary-accent);
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-        .navbar a:hover {
-            color: var(--secondary-accent);
-        }
+        /* Card styling */
         .profile-card {
-            background: var(--card-bg);
+            background: #f0f0f0; /* Changed from #fff to a gray to show the change */
             border-radius: 15px;
-            box-shadow: 0 4px 12px var(--shadow);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             padding: 2rem;
             max-width: 400px;
-            margin: 1.25rem auto 0 auto;
+            margin: auto;
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         .profile-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 18px var(--shadow);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.15);
         }
         .profile-card img {
             width: 160px;
             height: 160px;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: none;
+            box-shadow: none; /* Removed the shadow for the "white boundary" effect */
             margin-bottom: 16px;
         }
         .profile-card h2 {
             margin-bottom: 0.5rem;
-            color: var(--heading);
-            font-size: 1.5rem;
+            color: #22223b;
         }
         .profile-card p {
             font-size: 0.95rem;
             margin-bottom: 1.2rem;
-            color: var(--text);
+            color: #555;
+        }
+        .profile-card a {
+            display: inline-block;
+            margin: 0.3rem 0.6rem;
+            text-decoration: none;
+            color: #3a86ff;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .profile-card a:hover {
+            color: #22223b;
         }
         .centered-photo {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
+          display: block;
+          margin-left: auto;
+          margin-right: auto;
         }
-        .section-box {
-            margin: var(--section-spacing) auto 0 auto;
-            max-width: 400px;
-            background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 2px 8px var(--shadow);
-            padding: 1rem 1.2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            overflow: hidden; /* Prevent inner content from overflowing the box */
-        }
-        .section-title {
-            font-size: 1.15rem;
-            color: var(--heading);
-            margin-bottom: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        /* Skills section */
-        .skills-list {
-            display: flex;
-            flex-wrap: nowrap;
-            gap: 0.5rem;
-            justify-content: center;
-            width: 100%;
-            overflow-x: auto;
-        }
-        .skill-item {
-            background: var(--skill-bg);
-            color: var(--skill-text);
-            border: 1.5px solid var(--skill-border);
-            border-radius: 20px;
-            padding: 0.45rem 0.9rem;
-            font-size: 1rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            box-shadow: 0 2px 8px rgba(165,180,252,0.05);
-            text-align: center;
-            white-space: nowrap;
-        }
-        .skills-list::-webkit-scrollbar {
-            display: none;
-        }
-        .skills-list {
-            scrollbar-width: none;
-        }
-        /* Projects section */
-        .projects-list {
-            width: 100%;
-            display: flex;
-            gap: 0.7rem;
-            justify-content: center;
-            align-items: stretch;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            /* Prevent box
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="https://www.linkedin.com/in/michael-ebersole-871031359/">LinkedIn</a></li>
+            <li><a href="https://www.upwork.com/freelancers/~01a08a65254b745176">Upwork</a></li>
+            <li><a href="https://app.joinhandshake.com/profiles/ytgt2r">Handshake</a></li>
+        </ul>
+    </nav>
+
+    <div class="profile-card">
+        <a href="https://www.linkedin.com/in/michael-ebersole-871031359/" target="_blank">
+            <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/Screenshot%202025-09-04%20135719.png" alt="Michael Ebersole Profile Photo">
+        </a>
+        <h2>Michael Ebersole</h2>
+        <p>I am a junior web developer actively seeking freelance opportunities. Let's connect if you need quality web development for your next project!</p>
+        <a href="mailto:ebersolemichael@gmail.com">Email</a>
+        <a href="tel:2023862653">Call</a>
+    </div>
+
+    <footer style="text-align:center; margin-top:40px;">
+        <small>© 2025 Michael Ebersole</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
