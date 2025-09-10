@@ -7,12 +7,15 @@
     <style>
         :root {
             --background: #F8FAFC;
-            --card-bg: #F2F2E9;         /* Slightly stronger off-white */
-            --primary-accent: #2563EB;  /* Tech blue */
-            --secondary-accent: #06B6D4;/* Bright cyan */
-            --heading: #22223B;         /* Charcoal blue */
-            --text: #444;               /* Dark gray */
-            --shadow: #A5B4FC;          /* Soft blue shadow */
+            --card-bg: #F2F2E9;
+            --primary-accent: #2563EB;
+            --secondary-accent: #06B6D4;
+            --heading: #22223B;
+            --text: #444;
+            --shadow: #A5B4FC;
+            --skill-bg: #F2F2E9; /* same as card background */
+            --skill-text: #2563EB;
+            --skill-border: #A5B4FC; /* soft blue shadow */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -54,7 +57,7 @@
             box-shadow: 0 4px 12px var(--shadow);
             padding: 2rem;
             max-width: 400px;
-            margin: 1rem auto 0 auto; /* Reduced space above card */
+            margin: 1.25rem auto 0 auto;
             text-align: center;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
@@ -80,21 +83,58 @@
             margin-bottom: 1.2rem;
             color: var(--text);
         }
-        .profile-card a {
-            display: inline-block;
-            margin: 0.3rem 0.6rem;
-            text-decoration: none;
-            color: var(--primary-accent);
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-        .profile-card a:hover {
-            color: var(--secondary-accent);
-        }
         .centered-photo {
             display: block;
             margin-left: auto;
             margin-right: auto;
+        }
+        .skills {
+            margin: 2rem auto 0 auto;
+            max-width: 400px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px var(--shadow);
+            padding: 1rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .skills-title {
+            font-size: 1.15rem;
+            color: var(--heading);
+            margin-bottom: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        .skills-list {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 0.5rem;
+            justify-content: center;
+            width: 100%;
+            overflow-x: auto;
+        }
+        .skill-item {
+            background: var(--skill-bg);
+            color: var(--skill-text);
+            border: 1.5px solid var(--skill-border);
+            border-radius: 20px;
+            padding: 0.45rem 0.9rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(165,180,252,0.05);
+            text-align: center;
+            white-space: nowrap;
+            /* No hover styles */
+        }
+        /* Hide scroll bar on Chrome, Safari, Opera */
+        .skills-list::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scroll bar on Firefox */
+        .skills-list {
+            scrollbar-width: none;
         }
         @media (max-width: 500px) {
             .navbar {
@@ -109,7 +149,7 @@
             }
             .profile-card {
                 padding: 1.1rem;
-                margin: 1rem 0.6rem 0 0.6rem;
+                margin: 1.5rem 0.6rem 0 0.6rem;
                 max-width: 98vw;
             }
             .profile-card img {
@@ -122,9 +162,21 @@
             .profile-card p {
                 font-size: 0.98rem;
             }
-            .profile-card a {
-                margin: 0.25rem 0.12rem;
-                font-size: 1rem;
+            .skills {
+                margin: 1.25rem auto 0 auto;
+                max-width: 98vw;
+                padding: 0.8rem 0.3rem;
+            }
+            .skills-title {
+                font-size: 1.03rem;
+                margin-bottom: 0.7rem;
+            }
+            .skills-list {
+                gap: 0.4rem;
+            }
+            .skill-item {
+                padding: 0.4rem 0.7rem;
+                font-size: 0.95rem;
             }
         }
     </style>
@@ -140,9 +192,21 @@
     <div class="profile-card">
         <img class="centered-photo" src="https://raw.githubusercontent.com/ChesterBergling/WD-LL2-demo/main/image.jpg" alt="Michael Ebersole Profile Photo">
         <h2>Michael Ebersole</h2>
-        <p>I am a junior web developer actively seeking freelance opportunities. Let’s connect if you need quality web development for your next project!
-        <br><br>
-        <a href="mailto:ebersolemichael1@gmail.com">ebersolemichael1@gmail.com</a> <a href="tel:202-386-2653">202-386-2653</a></p>
+        <p>
+            I am a junior web developer actively seeking freelance opportunities. Let’s connect if you need quality web development for your next project!
+            <br><br>
+            <span>ebersolemichael1@gmail.com</span>
+            <span>202-386-2653</span>
+        </p>
+    </div>
+    <div class="skills">
+        <div class="skills-title">Skills</div>
+        <div class="skills-list">
+            <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">WordPress</div>
+            <div class="skill-item">GitHub</div>
+        </div>
     </div>
     <script></script>
 </body>
