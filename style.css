@@ -1,93 +1,3 @@
-html {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-}
-.profile-photo-container {
-  width: 180px;         /* Double the size for enlargement */
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;     /* Crops anything outside the circle */
-  border-radius: 50%;   /* Makes it a perfect circle */
-  background: #e7eaf6;  /* Matches site background, hides white edges */
-  box-shadow: 0 2px 8px rgba(34,34,59,0.08);
-  margin: 2rem auto;
-}
-
-.profile-photo {
-  width: 200px;         /* Slightly larger for zoom-in effect */
-  height: 200px;
-  object-fit: cover;    /* Ensures the image covers the area and cuts white */
-  object-position: center top; /* Adjust as needed to center subject */
-  border-radius: 50%;   /* Ensures image itself is circular */
-  background: #e7eaf6;
-}
-body {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 12pt;
-  background: linear-gradient(120deg, #f0f4f8 0%, #e7eaf6 100%);
-  color: #22223b;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Navbar styles */
-nav.navbar {
-  width: 100%;
-  background: #fff;
-  box-shadow: 0 2px 8px rgba(34, 34, 59, 0.06);
-  padding: 1.2rem 0;
-  margin-bottom: 2.5rem;
-  position: relative; /* Remove sticky */
-  top: auto;
-  z-index: 100;
-}
-
-nav.navbar ul {
-  display: flex;
-  justify-content: center;
-  gap: 2.5rem;
-  list-style: none;
-}
-
-nav.navbar li {
-  position: relative;
-}
-
-nav.navbar a {
-  text-decoration: none;
-  color: #22223b;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.3rem 0.7rem;
-  transition: color 0.2s, background 0.2s;
-  border-radius: 5px;
-}
-
-nav.navbar a:hover {
-  background: #e7eaf6;
-  color: #3a86ff;
-}
-
-h1, h2, h3 {
-  color: #3a86ff;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-/* Optional: add spacing to main content */
-body > *:not(nav) {
-  margin-top: 1.5rem;
-  width: 95%;
-  max-width: 700px;
-}
-
-/* Skills box styling */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
@@ -95,7 +5,8 @@ body > *:not(nav) {
   width: 100%;
   max-width: 700px;
   box-sizing: border-box;
-  justify-content: flex-start; /* ensures left alignment */
+  justify-content: flex-start;
+  overflow-x: auto;
 }
 
 .skill-item {
@@ -107,117 +18,28 @@ body > *:not(nav) {
   min-width: 80px;
   box-sizing: border-box;
   word-break: break-word;
+  flex: 1 1 140px;
+  max-width: 100%;
 }
 
-/* Responsive adjustments */
 @media (max-width: 600px) {
-  nav.navbar ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  body > *:not(nav) {
-    padding: 0 1rem;
-  }
-}
-
-/* -- Enhanced mobile styling and overlap fixes -- */
-@media (max-width: 600px) {
-  body {
-    display: block; /* Remove flex to prevent overlap */
-    padding-top: 0;
-    margin: 0;
-  }
-  nav.navbar {
-    position: relative; /* No stickiness, let it flow naturally */
-    top: auto;
-    margin-bottom: 1rem;
-    padding: 0.8rem 0.2rem;
-    width: 100vw;
-    min-width: 0;
-    max-width: 100vw;
-    z-index: 100;
-  }
-  .profile-photo-container {
-    width: 120px;
-    height: 120px;
-    margin: 1.5rem auto;
-    min-width: 0;
-    min-height: 0;
-  }
-  .profile-photo {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    object-position: center top;
-    border-radius: 50%;
-    background: #e7eaf6;
-    min-width: 0;
-    min-height: 0;
-  }
-  .profile-card {
-    margin: 2.2rem auto 0 auto !important; /* More space below navbar */
-    padding: 1.2rem;
-    max-width: 98vw;
-    width: 100vw;
-    min-width: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .section-box {
-    max-width: 98vw;
-    width: 100vw;
-    padding: 0.5rem 0.5rem;
-    margin: 1rem auto;
-    min-width: 0;
-    box-sizing: border-box;
-  }
   .skills-list {
-    flex-wrap: wrap;
     gap: 0.5rem;
-    width: 100%;
     max-width: 100vw;
+    width: 100vw;
     min-width: 0;
-    overflow-x: auto;
     box-sizing: border-box;
-    justify-content: flex-start; /* ensures left alignment */
+    overflow-x: auto;
+    justify-content: flex-start;
   }
   .skill-item {
-    min-width: 0;
-    word-break: break-word;
-    padding: 0.4rem 0.7rem;
-    font-size: 0.95rem;
-    flex: 1 1 120px; /* allows items to grow/shrink, sets min width */
-    box-sizing: border-box;
-    margin-bottom: 0.3rem;
-  }
-  .projects-list {
-    gap: 0.5rem;
-    width: 100%;
+    flex: 1 1 90px;
+    min-width: 60px;
     max-width: 100vw;
-    min-width: 0;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.7rem;
+    margin-bottom: 0.3rem;
     box-sizing: border-box;
-    flex-wrap: wrap;
-  }
-  .project-item {
-    padding: 0.45rem 0.35rem;
-    max-width: 100px;
-    min-width: 0;
     word-break: break-word;
-  }
-  main, section, .box, .content-box {
-    width: 100vw;
-    box-sizing: border-box;
-    margin-bottom: 1rem;
-    overflow: hidden;
-    min-width: 0;
-    padding: 0.5rem;
-    font-size: 1rem;
-    word-break: break-word;
-    overflow-wrap: break-word;
-  }
-  /* Prevent content overflow everywhere */
-  * {
-    box-sizing: border-box;
-    min-width: 0;
   }
 }
