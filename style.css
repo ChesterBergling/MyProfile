@@ -1,30 +1,11 @@
-html {
- * {
+/* Reset styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-.profile-photo-container {
-  width: 180px;         /* Double the size for enlargement */
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;     /* Crops anything outside the circle */
-  border-radius: 50%;   /* Makes it a perfect circle */
-  background: #e7eaf6;  /* Matches site background, hides white edges */
-  box-shadow: 0 2px 8px rgba(34,34,59,0.08);
-  margin: 2rem auto;
-}
 
-.profile-photo {
-  width: 200px;         /* Slightly larger for zoom-in effect */
-  height: 200px;
-  object-fit: cover;    /* Ensures the image covers the area and cuts white */
-  object-position: center top; /* Adjust as needed to center subject */
-  border-radius: 50%;   /* Ensures image itself is circular */
-  background: #e7eaf6;
-}
+/* Basic body and layout styles */
 body {
   font-family: 'Times New Roman', Times, serif;
   font-size: 12pt;
@@ -37,7 +18,7 @@ body {
 }
 
 /* Navbar styles */
-nav.navbar {
+.navbar {
   width: 100%;
   background: #fff;
   box-shadow: 0 2px 8px rgba(34, 34, 59, 0.06);
@@ -45,18 +26,18 @@ nav.navbar {
   margin-bottom: 2.5rem;
 }
 
-nav.navbar ul {
+.navbar ul {
   display: flex;
   justify-content: center;
   gap: 2.5rem;
   list-style: none;
 }
 
-nav.navbar li {
+.navbar li {
   position: relative;
 }
 
-nav.navbar a {
+.navbar a {
   text-decoration: none;
   color: #22223b;
   font-weight: 500;
@@ -66,31 +47,122 @@ nav.navbar a {
   border-radius: 5px;
 }
 
-nav.navbar a:hover {
+.navbar a:hover {
   background: #e7eaf6;
   color: #3a86ff;
 }
 
+/* Profile photo styles */
+.profile-card img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  background: #e7eaf6;
+  box-shadow: 0 2px 8px rgba(34,34,59,0.08);
+  margin: 2rem auto;
+}
+
+/* Headings */
 h1, h2, h3 {
   color: #3a86ff;
   font-family: 'Times New Roman', Times, serif;
 }
 
-/* Optional: add spacing to main content */
-body > *:not(nav) {
+/* Main content spacing */
+body > *:not(.navbar) {
   margin-top: 1.5rem;
   width: 95%;
   max-width: 700px;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments for mobile devices */
 @media (max-width: 600px) {
-  nav.navbar ul {
+  /* Adjust navbar for mobile */
+  .navbar {
+    padding: 0.8rem 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  .navbar ul {
     flex-direction: column;
     gap: 1rem;
-  }
-  body > *:not(nav) {
     padding: 0 1rem;
   }
-}
+  
+  /* Reduce profile photo size for mobile */
+  .profile-card img {
+    width: 140px;
+    height: 140px;
+    margin: 1rem auto;
+  }
+  
+  /* Main content adjustments */
+  body > *:not(.navbar) {
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Profile card mobile adjustments */
+  .profile-card {
+    padding: 1rem !important;
+    margin: 1rem 0.5rem !important;
+    max-width: calc(100vw - 1rem) !important;
+  }
+  
+  /* Section boxes mobile adjustments */
+  .section-box {
+    margin: 1rem auto !important;
+    max-width: calc(100vw - 1rem) !important;
+    padding: 0.8rem !important;
+  }
+  
+  /* Improve font sizes for readability */
+  body {
+    font-size: 14px;
+  }
+  
+  h1, h2, h3 {
+    font-size: 1.2em !important;
+  }
+  
+  /* Prevent horizontal scrolling */
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* Skills and projects lists mobile adjustments */
+  .skills-list {
+    gap: 0.4rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  
+  .skill-item {
+    padding: 0.4rem 0.7rem !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .projects-list {
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  
+  .project-item {
+    padding: 0.5rem !important;
+    max-width: calc(50% - 0.25rem) !important;
+    min-width: 140px !important;
+  }
+  
+  /* Stack sections vertically with full width */
+  .section-box {
+    width: 100%;
+    margin: 1rem 0;
+    display: block;
+  }
 }
