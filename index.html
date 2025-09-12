@@ -244,11 +244,17 @@
                 font-size: 0.95rem;
             }
             .projects-list {
-                gap: 0.5rem;
+                flex-wrap: wrap;
+                flex-direction: column;
+                gap: 0.7rem;
+                align-items: stretch;
+                overflow-x: visible;
             }
             .project-item {
                 padding: 0.45rem 0.35rem;
-                max-width: 100px;
+                max-width: 100%;
+                min-width: 0;
+                width: 100%;
             }
         }
     </style>
