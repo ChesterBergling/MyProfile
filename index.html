@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,10 +60,9 @@
         .navbar a:hover {
             color: var(--secondary-accent);
         }
-        /* --- Small portfolio photo in navbar header --- */
         .portfolio-corner-photo-container {
             width: 38px;
-            height: 38px;
+            height:38px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -169,24 +167,23 @@
         .projects-list {
             width: 100%;
             display: flex;
-            gap: 0.7rem;
-            justify-content: center;
+            flex-direction: column;
+            gap: 3rem;
+            justify-content: flex-start;
             align-items: stretch;
-            flex-wrap: nowrap;
-            overflow-x: auto;
         }
         .project-item {
             background: var(--skill-bg);
             border: 1px solid var(--skill-border);
             border-radius: 12px;
-            padding: 0.7rem 0.6rem;
+            padding: 1.5rem 1rem 1.5rem 1rem;
             color: var(--text);
             box-shadow: 0 1px 4px rgba(165,180,252,0.07);
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            min-width: 0;
-            max-width: 120px;
+            min-width: 220px;
+            min-height: 120px;
             flex: 1 1 0;
             word-break: break-word;
             overflow: hidden;
@@ -194,12 +191,34 @@
         .project-name {
             font-weight: 600;
             color: var(--primary-accent);
-            margin-bottom: 0.3rem;
-            font-size: 1.02rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
         }
         .project-desc {
-            font-size: 0.93rem;
+            font-size: 1rem;
             color: var(--text);
+            margin-top: 0.3rem;
+            word-break: break-word;
+        }
+        @media (max-width: 900px) {
+            .section-box {
+                max-width: 98vw;
+                padding: 0.8rem 0.3rem;
+            }
+            .projects-list {
+                gap: 1.5rem;
+            }
+            .project-item {
+                min-width: 0;
+                width: 100%;
+                min-height: 120px;
+                padding: 1.2rem 0.6rem 1.2rem 0.6rem;
+                box-sizing: border-box;
+                font-size: 1rem;
+            }
+            .project-name {
+                margin-bottom: 1rem;
+            }
         }
         @media (max-width: 500px) {
             .navbar {
@@ -243,13 +262,6 @@
                 padding: 0.4rem 0.7rem;
                 font-size: 0.95rem;
             }
-            .projects-list {
-                gap: 0.5rem;
-            }
-            .project-item {
-                padding: 0.45rem 0.35rem;
-                max-width: 100px;
-            }
         }
     </style>
 </head>
@@ -288,15 +300,21 @@
         <div class="projects-list">
             <div class="project-item">
                 <div class="project-name">Portfolio Website</div>
-                <div class="project-desc">A responsive site to showcase my skills and services, built with HTML and CSS.</div>
+                <div class="project-desc">
+                    A responsive site to showcase my skills and services, built with HTML and CSS. This includes a modern design and is mobile-friendly.
+                </div>
             </div>
             <div class="project-item">
                 <div class="project-name">WordPress Blog</div>
-                <div class="project-desc">Custom WordPress setup, theme configuration, and SEO optimization for a client blog.</div>
+                <div class="project-desc">
+                    Custom WordPress setup, theme configuration, plugin selection, and SEO optimization for a client blog project. Focused on usability and performance.
+                </div>
             </div>
             <div class="project-item">
                 <div class="project-name">GitHub Demo</div>
-                <div class="project-desc">Demo repositories to demonstrate version control and collaboration workflows.</div>
+                <div class="project-desc">
+                    Demo repositories to demonstrate version control, branching, and collaboration workflows for code projects using GitHub.
+                </div>
             </div>
         </div>
     </div>
