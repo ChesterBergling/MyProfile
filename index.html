@@ -121,14 +121,19 @@
         .section-box {
             margin: var(--section-spacing) auto 0 auto;
             max-width: 400px;
+            length: 500px;
             background: var(--card-bg);
             border-radius: 12px;
             box-shadow: 0 2px 8px var(--shadow);
-            padding: 1rem 1.2rem;
+            padding: 1rem 1.2rem 2rem 1.2rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             overflow: hidden;
+        }
+        .projects.section-box {
+            margin-top: 5.85rem;
+            overflow: visible;
         }
         .section-title {
             font-size: 1.15rem;
@@ -183,10 +188,10 @@
             flex-direction: column;
             align-items: flex-start;
             min-width: 220px;
-            min-height: 120px;
-            flex: 1 1 0;
+            min-height: auto;
+            flex: 1 1 auto;
             word-break: break-word;
-            overflow: hidden;
+            overflow: visible;
         }
         .project-name {
             font-weight: 600;
@@ -211,7 +216,7 @@
             .project-item {
                 min-width: 0;
                 width: 100%;
-                min-height: 120px;
+                min-height: auto;
                 padding: 1.2rem 0.6rem 1.2rem 0.6rem;
                 box-sizing: border-box;
                 font-size: 1rem;
@@ -286,7 +291,8 @@
         /* For all mobile devices, ensure last section has extra space */
         @media (max-width: 500px) {
             .projects.section-box {
-                margin-bottom: 7rem;
+                margin-bottom: 10rem;
+                padding-bottom: 3rem;
             }
         }
     </style>
@@ -319,6 +325,8 @@
             <div class="skill-item">CSS</div>
             <div class="skill-item">WordPress</div>
             <div class="skill-item">GitHub</div>
+            <div class="skill-item">JavaScript</div>
+            <div class="skill-item">Figma</div>
         </div>
     </div>
     <div class="projects section-box">
@@ -327,9 +335,7 @@
             <div class="project-item">
                 <div class="project-name">Portfolio Website</div>
                 <div class="project-desc">
-                    A responsive site to showcase my skills and services, built with HTML and CSS. This includes a modern design and is mobile-friendly.
-                </div>
-            </div>
+                    A responsive site to showcase my skills and services, built with HTML and CSS. This includes a modern design and is mobile-friendly. 
             <div class="project-item">
                 <div class="project-name">WordPress Blog</div>
                 <div class="project-desc">
@@ -337,32 +343,33 @@
                 </div>
             </div>
             <div class="project-item">
-                <div class="project-name"> Water Quest </div>
+                <div class="project-name">Water Quest</div>
                 <div class="project-desc">
-                A responsive website for a water charity built using HTML, CSS, and Javascript. Features include a donation link, information about the charity, fun facts about water, and a link to the charity's main website.    
+                    A responsive website for a water charity built using HTML, CSS, and JavaScript. Features include a donation link, information about the charity, fun facts about water, and a link to the charity's main website. https://chesterbergling.github.io/Press-the-Clean-Water-Drops/
                 </div>
             </div>
-            </div> class="project-item">
-                <div class="project-name"> NASA APOD website </div>
+            <div class="project-item">
+                <div class="project-name">NASA APOD Website</div>
                 <div class="project-desc">
-                A website for displaying NASA's Astronomy Picture of the Day using HTML, CSS, and Javascript. Features include displaying the image of the day, its title, date, and explanation fetched from a copy of NASA's public API.
+                    A website for displaying NASA's Astronomy Picture of the Day using HTML, CSS, and JavaScript. Features include displaying the image of the day, its title, date, and explanation fetched from a copy of NASA's public API. The site has filters to filter results basesd on date, photo details and favoirte photos. https://chesterbergling.github.io/07-nasa-space-explorer/
                 </div>
-              </div>
-              </div> class="project-item">
-                <div class="project-name"> CuisineSphere  </div>
+            </div>
+            <div class="project-item">
+                <div class="project-name">CuisineSphere</div>
                 <div class="project-desc">
-                A responsive  website built with HTML and CSS that features recipes from around the world. Features include a hero section, recipe categories, favorite recipes, filters, pagination and images for each recipe. 
+                    A responsive website built with HTML and CSS that features recipes from around the world. Features include a hero section, recipe categories, favorite recipes, filters, pagination and images for each recipe. https://chesterbergling.github.io/Food/
                 </div>
-              </div>
-              </div> class="project-item">
-                <div class="project-name">  Intel Sustainability Timeline  </div>
+            </div>
+            <div class="project-item">
+                <div class="project-name">Intel Sustainability Timeline</div>
                 <div class="project-desc">
-                A website built to showcase Intel's sustainability efforts over the years using HTML, CSS and Javascript. Features include a timeline of sustainability milestones, images, descriptions of each milestone, links to related Intel sites, and a mock subscription form. 
+                    A website built to showcase Intel's sustainability efforts over the years using HTML, CSS and JavaScript. Features include a timeline of sustainability milestones, images, descriptions of each milestone, links to related Intel sites, and a mock subscription form. https://chesterbergling.github.io/Intel-Sustainability-Timeline/
                 </div>
+            </div>
         </div>
     </div>
     <!-- Add an empty spacer for extra vertical scroll -->
-    <div style="height: 300px;"></div>
+    <div style="height: 500px;"></div>
     <script></script>
 </body>
 </html>
